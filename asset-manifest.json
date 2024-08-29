@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dsra-editor/static/css/main.9307fc0c.css",
+    "main.js": "/dsra-editor/static/js/main.9918d9cc.js",
+    "static/js/453.2f9b227c.chunk.js": "/dsra-editor/static/js/453.2f9b227c.chunk.js",
+    "index.html": "/dsra-editor/index.html",
+    "main.9307fc0c.css.map": "/dsra-editor/static/css/main.9307fc0c.css.map",
+    "main.9918d9cc.js.map": "/dsra-editor/static/js/main.9918d9cc.js.map",
+    "453.2f9b227c.chunk.js.map": "/dsra-editor/static/js/453.2f9b227c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9307fc0c.css",
+    "static/js/main.9918d9cc.js"
+  ]
+}
