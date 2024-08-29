@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Data Sharing Risk Assessment Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Data Sharing Risk Assessment Editor** is a web-based tool for loading, editing, and downloading JSON data files related to data sharing risk assessments. It allows users to either load the latest JSON data from a live tool or upload a JSON file from their computer. After making edits, users can download the modified JSON data for further use.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Load JSON from URL**: Load the latest JSON data from a live tool at `https://dsra.theodi.org/json/checkpoints.json`.
+- **Upload JSON File**: Upload a JSON file from your computer to edit it within the tool.
+- **Edit JSON Data**: Modify the JSON data using a user-friendly form interface, including rich text fields using the Quill WYSIWYG editor.
+- **Download JSON Data**: After editing, download the updated JSON data to your computer.
 
-### `npm start`
+## Warning
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**This tool does not save state.** Ensure you download your changes before closing the tool. To continue editing later, you can re-upload the downloaded JSON file.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the Data Sharing Risk Assessment Editor, you need the following installed on your machine:
 
-### `npm run build`
+- [Node.js](https://nodejs.org/) (version 12.x or later)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/dsra-editor.git
+   cd dsra-editor
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+### Running the Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the application locally:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This will start the application on `http://localhost:3000/`. Open this URL in your browser to use the Data Sharing Risk Assessment Editor.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To deploy the application, follow these steps:
 
-### `npm run build` fails to minify
+#### 1. Build the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+First, create a production build of the application:
+
+```bash
+npm run build
+```
+
+This command will generate a `build` directory with all the static assets required to deploy the application.
+
+#### 2. Deploy to a Static Server
+
+You can deploy the contents of the `build` directory to any static file server. Here are a few popular options:
+
+- **GitHub Pages**:
+  - If you want to deploy to GitHub Pages, install the `gh-pages` package and add the following scripts to your `package.json`:
+    ```json
+    "homepage": "https://yourusername.github.io/dsra-editor",
+    "scripts": {
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+    ```
+  - Deploy using:
+    ```bash
+    npm run deploy
+    ```
+
+- **Netlify**:
+  - Simply drag and drop the `build` folder into Netlify’s dashboard, or use the Netlify CLI:
+    ```bash
+    npm install -g netlify-cli
+    netlify deploy
+    ```
+
+- **Vercel**:
+  - Deploy using Vercel CLI:
+    ```bash
+    npm install -g vercel
+    vercel
+    ```
+
+- **AWS S3**:
+  - Upload the contents of the `build` directory to an S3 bucket. Ensure the bucket is configured to serve static content.
+
+#### 3. Access the Deployed Application
+
+After deploying, your application will be available at the URL provided by your hosting service.
+
+## Contributing
+
+If you find any bugs or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

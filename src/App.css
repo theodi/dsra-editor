@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+/* src/App.css */
+
+.MuiGrid-item {
+  margin-bottom: 24px !important; /* Adds space between form controls */
+}
+
+.json-forms-label {
+  font-size: 1.5em; /* Makes the labels larger */
+  font-weight: bold;
+}
+
+.quill-editor {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 150px; /* Ensure Quill editor has a minimum height */
+}
+body {
+  margin: 1em;
+}
